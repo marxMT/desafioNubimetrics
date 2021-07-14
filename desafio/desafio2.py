@@ -3,8 +3,7 @@ import json
 import os, os.path
 import  errno
 import utils
-class consulta_api_ml:
-    #ml_url ='https://api.mercadolibre.com/sites/MLA/search?category=MLA5725'
+class Consulta_Api_ML:
     items=[]
     def __init__(self, ml_url):
         self.ml_url = ml_url
@@ -23,7 +22,7 @@ class consulta_api_ml:
 
 if __name__ == "__main__":
     url = 'https://api.mercadolibre.com/sites/MLA/search?category=MLA5725'
-    ml_json = consulta_api_ml(url)
+    ml_json = Consulta_Api_ML(url)
     ml_json.busqueda(1)
     ruta_almacen = utils.almacenamiento('searchjson202107','result_json.json')
     with open(ruta_almacen,'w') as file:
